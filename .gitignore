@@ -62,3 +62,15 @@ app.*.map.json
 *.wmv
 *.apk
 *.dill
+
+# Firebase config files
+google-services.json
+GoogleService-Info.plist
+
+# Environment files
+.env
+.env.*
+
+# Generated files
+*.g.dart
+*.freezed.dart
