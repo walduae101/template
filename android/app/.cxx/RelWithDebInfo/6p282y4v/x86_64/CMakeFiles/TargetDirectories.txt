@@ -1,0 +1,2 @@
+C:/Users/WCWZ/AndroidStudioProjects/sajaya/android/app/.cxx/RelWithDebInfo/6p282y4v/x86_64/CMakeFiles/edit_cache.dir
+C:/Users/WCWZ/AndroidStudioProjects/sajaya/android/app/.cxx/RelWithDebInfo/6p282y4v/x86_64/CMakeFiles/rebuild_cache.dir
