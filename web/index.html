@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="$FLUTTER_BASE_HREF">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="A new Flutter project.">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="sajaya">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="icons/favicon-96x96.png">
+
+  <!-- Google Sign-In Client ID - Using Sajaya Web client ID -->
+  <meta name="google-signin-client_id" content="308604732117-web-client-id.apps.googleusercontent.com">
+
+  <!-- Apple Sign In - Minimal Configuration -->
+  <meta name="appleid-signin-client-id" content="3DD956ET5V.com.easylife.sajaya">
+  <meta name="appleid-signin-scope" content="email">
+  <meta name="appleid-signin-redirect-uri" content="https://sajaya-2c801.firebaseapp.com/__/auth/handler">
+  <meta name="appleid-signin-state" content="signin">
+
+  <title>Sajaya</title>
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Ultra-Minimal Firebase Config - Only the essentials -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+
+  <!-- Inline CSS for minimal DOM manipulation -->
+  <style>
+    body { 
+      font-family: sans-serif; 
+      text-align: center;
+      margin-top: 40px;
+      background: white;
+    }
+    .success { 
+      color: #3F0707; 
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    .return-btn {
+      background: #C9AE5D;
+      color: #3F0707;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+  </style>
+
+  <script>
+    // Ultra-minimal Firebase initialization
+    firebase.initializeApp({
+      apiKey: "AIzaSyBjn_He4R1kiZhnrpmWsx7FZwrEBbP8WSk",
+      authDomain: "sajaya-2c801.firebaseapp.com",
+      projectId: "sajaya-2c801",
+    });
+    
+    // Function to return to app using multiple strategies
+    function returnToApp() {
+      // Try all possible ways to get back to the app
+      
+      // 1. Try custom URL scheme
+      var customSchemeUrl = "sajaya://apple-login-callback";
+      window.location.href = customSchemeUrl;
+      
+      // 2. Set a timeout to try the second approach if the first fails
+      setTimeout(function() {
+        // Send message to parent window if this is a popup
+        if (window.opener) {
+          window.opener.postMessage("AUTH_COMPLETE", "*");
+        }
+        
+        // 3. Finally attempt to close the window
+        setTimeout(function() {
+          window.close();
+        }, 100);
+      }, 100);
+    }
+    
+    // Simplified auth handler
+    window.addEventListener('load', function() {
+      // Static success UI for auth handler page
+      if (window.location.href.includes('__/auth/handler')) {
+        document.body.innerHTML = 
+          '<div class="success">Sign-In Successful!</div>' +
+          '<button onclick="returnToApp()" class="return-btn">Return to App</button>' +
+          '<p style="margin-top:20px;font-size:14px;">Window will automatically return to app in 1 second...</p>';
+        
+        // Try to auto-return to app after a short delay
+        setTimeout(returnToApp, 1000);
+        return;
+      }
+      
+      // Minimal auth state check
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          // Success UI for direct auth completion
+          document.body.innerHTML = 
+            '<div class="success">Sign-In Successful!</div>' +
+            '<button onclick="returnToApp()" class="return-btn">Return to App</button>' +
+            '<p style="margin-top:20px;font-size:14px;">Window will automatically return to app in 1 second...</p>';
+          
+          // Try to auto-return to app after a short delay
+          setTimeout(returnToApp, 1000);
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>

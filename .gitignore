@@ -5,16 +5,12 @@
 *.swp
 .DS_Store
 .atom/
+.build/
 .buildlog/
 .history
 .svn/
+.swiftpm/
 migrate_working_dir/
-
-# Firebase executables and binaries
-firebase.exe
-*.exe
-*.bin
-*.dll
 
 # IntelliJ related
 *.iml
@@ -33,12 +29,9 @@ firebase.exe
 .dart_tool/
 .flutter-plugins
 .flutter-plugins-dependencies
-.packages
 .pub-cache/
 .pub/
 /build/
-**/.dart_tool/
-**/build/
 
 # Symbolication related
 app.*.symbols
@@ -50,27 +43,11 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
-/android/.idea/
-/android/android.iml
 
-# Large media files
-*.mp4
-*.tiff
-*.avi
-*.flv
-*.mov
-*.wmv
-*.apk
-*.dill
+apphosting.local.yaml
 
-# Firebase config files
-google-services.json
-GoogleService-Info.plist
+# Java heap dumps
+*.hprof
 
-# Environment files
-.env
-.env.*
-
-# Generated files
-*.g.dart
-*.freezed.dart
+# Firebase executables
+firebase.exe

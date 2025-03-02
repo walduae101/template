@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "308604732117",
+    "firebase_url": "https://sajaya-2c801-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "sajaya-2c801",
+    "storage_bucket": "sajaya-2c801.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:308604732117:android:f38e7d5071f96b22f8185c",
+        "android_client_info": {
+          "package_name": "com.easylife.sajaya"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "308604732117-hkitnv5oogpa3febqlhmukoupqlohit4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.easylife.sajaya",
+            "certificate_hash": "1719355dfeb05041c6162fc748bb63381cfb6b83"
+          }
+        },
+        {
+          "client_id": "308604732117-d42cc3i50sk50k78eg143p0qc0fecsu3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjn_He4R1kiZhnrpmWsx7FZwrEBbP8WSk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "308604732117-d42cc3i50sk50k78eg143p0qc0fecsu3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "308604732117-9akust2sllj0cr1cbe1924operlht6i5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.easylife.sajaya"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
