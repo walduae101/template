@@ -5,11 +5,9 @@
 *.swp
 .DS_Store
 .atom/
-.build/
 .buildlog/
 .history
 .svn/
-.swiftpm/
 migrate_working_dir/
 
 # IntelliJ related
@@ -29,6 +27,8 @@ migrate_working_dir/
 .dart_tool/
 .flutter-plugins
 .flutter-plugins-dependencies
+.flutter_settings
+.packages
 .pub-cache/
 .pub/
 /build/
@@ -44,10 +44,41 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
-apphosting.local.yaml
+# Android Gradle files
+/android/.gradle/
+.gradle/
+/android/build/
+/android/app/build/
+
+# iOS build files
+/ios/Pods/
+/ios/build/
 
 # Java heap dumps
 *.hprof
 
 # Firebase executables
 firebase.exe
+
+# Fvm
+.fvm/
+
+# Coverage
+coverage/
+
+# Generated files
+*.g.dart
+*.freezed.dart
+*.gr.dart
+
+# Web related
+/web/build/
+
+# Large binary files
+*.aar
+*.so
+*.dll
+*.dylib
+*.a
+*.framework/
+*.jar
